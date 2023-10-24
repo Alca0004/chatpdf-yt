@@ -46,7 +46,8 @@ const FileUpload = () => {
         }
         mutate(data, {
           onSuccess: (data) => {
-            toast.success(data.message);
+            console.log(data);
+            // toast.success(data.message);
           },
           onError: (err) => {
             toast.error('Error creating chat');
@@ -70,16 +71,17 @@ const FileUpload = () => {
         <input {...getInputProps()} />
         {uploading || isLoading ? (
           <>
-            {/* Loading state */}
+            {/* loading state (Currrently not working) */}
+
             <Loader2 className='h-10 w-10 text-blue-500 animate-spin' />
             <p className='mt-2 text-sm text-slate-400'>
-              Spilling tea to GPT...
+              Spilling Tea to GPT...
             </p>
           </>
         ) : (
           <>
             <Inbox className='w-10 h-10 text-blue-500' />
-            <p className='mt-2 text-sm text-slate-400'>Drop PDF here</p>
+            <p className='mt-2 text-sm text-slate-400'>Drop PDF Here</p>
           </>
         )}
       </div>
